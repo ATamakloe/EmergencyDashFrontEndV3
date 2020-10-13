@@ -1,27 +1,28 @@
 interface FireData {
-    readonly temperature: Number
-    readonly humidity: Number
+    readonly temperature: number
+    readonly humidity: number
     readonly units: 'fahrenheit'
 }
 
 interface WaterData {
-    readonly waterLevel: Number
+    readonly temperature: number
+    readonly waterLevel: number
     readonly units: 'feet'
 }
 
 interface MockSensor  {
-    readonly name: String
+    readonly name: string
     readonly type: 'water' | 'fire'
-    readonly lastUpdateTime?: String
-    readonly latitude: Number
-    readonly longitude: Number
+    readonly lastUpdateTime?: string
+    readonly latitude: number
+    readonly longitude: number
 }
 
-interface MockWaterSensor extends MockSensor {
+export interface MockWaterSensor extends MockSensor {
     readonly sensorData: WaterData
 }
 
-interface MockFireSensor extends MockSensor {
+export interface MockFireSensor extends MockSensor {
     readonly sensorData: FireData
 }
 
@@ -33,6 +34,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
       longitude: -95.351207,
       sensorData: {
           waterLevel: 24,
+          temperature: 77.3,
           units: 'feet'
       }
     },
@@ -43,6 +45,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.367730,
         sensorData: {
             waterLevel: 4,
+            temperature: 75,
             units: 'feet'
         }
       },
@@ -53,6 +56,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.295699,
         sensorData: {
             waterLevel: 19,
+            temperature: 71.2,
             units: 'feet'
         }
       },
@@ -63,6 +67,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.433467,
         sensorData: {
             waterLevel: 0.3,
+            temperature: 78.2,
             units: 'feet'
         }
       },
@@ -73,6 +78,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.373125,
         sensorData: {
             waterLevel: 13.37,
+            temperature: 79.1,
             units: 'feet'
         }
       },
@@ -83,6 +89,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.351207,
         sensorData: {
             waterLevel: 24,
+            temperature: 76.2,
             units: 'feet'
         }
       },
@@ -93,6 +100,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude:  -95.435499,
         sensorData: {
             waterLevel: 7,
+            temperature: 77,
             units: 'feet'
         }
       },
@@ -103,6 +111,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude:-95.304995,
         sensorData: {
             waterLevel: 0.5,
+            temperature: 75.5,
             units: 'feet'
         }
       },
@@ -113,6 +122,7 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.365226,
         sensorData: {
             waterLevel: 13.8,
+            temperature: 79,
             units: 'feet'
         }
       },
@@ -123,7 +133,11 @@ export const mockWaterSensors: Array<MockWaterSensor> = [
         longitude: -95.344424,
         sensorData: {
             waterLevel: 68.8,
+            temperature: 75.5,
             units: 'feet'
         }
       },
 ]
+
+export const mockWaterImageURL: string = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT7-DAjTiBOYvn6N2td3geA18RopkxasPN1bg&usqp=CAU"
+export const mockMapBackground: string = "https://s.hdnux.com/photos/55/36/77/11923416/3/1200x0.jpg"
